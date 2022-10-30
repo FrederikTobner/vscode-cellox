@@ -7,7 +7,8 @@
     "vscode": "^1.72.0"
   },
   "categories": [
-    "Programming Languages"
+    "Programming Languages",
+    "Snippets"
   ],
   "contributes": {
     "languages": [{
@@ -20,6 +21,12 @@
       "language": "cellox",
       "scopeName": "source.cellox",
       "path": "./syntaxes/cellox.tmLanguage.json"
-    }]
+    }],
+    "snippets": [
+      {
+        "language": "cellox",
+        "path": "./snippets.json"
+      }
+    ]
   }
 }
