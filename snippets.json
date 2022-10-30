@@ -1,66 +1,110 @@
 {
-	"for loop": {
+	"for loop": 
+	{
 		"prefix": "for",
-		"body": [
-			"for (var i = 0; i < count; i++)\n{\n\t/* code */\n}"
+		"body": 
+		[
+			"for (var i = 0; i < $1; i++)",
+			"{",
+			"\t$2",
+			"}",
+			"$3"
 		],
 		"description": "for loop snippet"
 	},
-    "while loop": {
+    "while loop": 
+	{
 		"prefix": "while",
-		"body": [
-			"while (/* condition */)\n{\n\t/* code */\n}"
+		"body": 
+		[
+			"while ($1)",
+			"{",
+			"\t$2",
+			"}",
+			"$3"
 		],
 		"description": "while loop snippet"
 	},
-    "if": {
+    "if": 
+	{
 		"prefix": "if",
-		"body": [
-			"if (/* condition */)\n{\n\t/* code */\n}"
+		"body": 
+		[
+			"if ($1)",
+			"{",
+			"\t$2",
+			"}",
+			"$3"
 		],
 		"description": "if snippet"
 	},
-    "elif": {
+    "elif": 
+	{
 		"prefix": "elif",
-		"body": [
-			"else if (/* condition */)\n{\n\t/* code */\n}"
+		"body": 
+		[
+			"else if ($1)",
+			"{",
+			"\t%2",
+			"}",
+			"$3"
 		],
 		"description": "else if snippet"
 	},
-    "else": {
+    "else": 
+	{
 		"prefix": "else",
-		"body": [
-			"else\n{\n\t/* code */\n}"
+		"body": 
+		[
+			"else",
+			"{",
+			"\t$1",
+			"}",
+			"$2"
 		],
 		"description": "else snippet"
 	},
-	"class": {
+	"class": 
+	{
 		"prefix": "class",
-		"body": [
-			"class $1 \n{\n/* code */\n}",
-			"$2"
+		"body": 
+		[
+			"class $1",
+			"{",
+			"\t$2",
+			"}",
+			"$3"
 		],
 		"description": "class snippet"
 	},
-	"function": {
+	"function": 
+	{
 		"prefix": "fun",
-		"body": [
-			"fun $1($2) \n{\n/* code */\n}",
-			"$3"
+		"body": 
+		[
+			"fun $1($2)",
+			"{",
+			"\t$3",
+			"}",
+			"$4"
 		],
 		"description": "function snippet"
 	},
-	"print": {
+	"print": 
+	{
 		"prefix": "print",
-		"body": [
+		"body": 
+		[
 			"print $1;",
 			"$2"
 		],
 		"description": "print output to the console"
 	},
-	"var": {
+	"var": 
+	{
 		"prefix": "var",
-		"body": [
+		"body": 
+		[
 			"var $1 = $2;",
 			"$3"
 		],
