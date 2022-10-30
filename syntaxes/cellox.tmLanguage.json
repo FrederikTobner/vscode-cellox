@@ -1,7 +1,8 @@
 {
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"name": "cellox",
-	"patterns": [
+	"patterns": 
+	[
 		{
 			"include": "#keywords"
 		},
@@ -24,58 +25,71 @@
 			"include": "#comments"
 		}
 	],
-	"repository": {
-		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.cellox",
-				"match": "\\b(if|else|while|for|return|and|or)\\b"
-			},
-			{
-				"name": "keyword.print",
-				"match": "\\b(print)\\b"
-			},
-			{
-				"name": "keyword.constant.null",
-				"match": "\\b(null)\\b"
-			},
-			{
-				"name": "keyword.constant.boolean",
-				"match": "\\b(true|false)\\b"
-			},
-			{
-				"name": "keyword.this",
-				"match": "\\b(this)\\b"
-			},
-			{
-				"name": "keyword.super",
-				"match": "\\b(super)\\b"
-			}
-		]
+	"repository": 
+	{
+		"keywords": 
+		{
+			"patterns": 
+			[
+				{
+					"name": "keyword.control.cellox",
+					"match": "\\b(if|else|while|for|return|and|or)\\b"
+				},
+				{
+					"name": "keyword.print",
+					"match": "\\b(print)\\b"
+				},
+				{
+					"name": "keyword.constant.null",
+					"match": "\\b(null)\\b"
+				},
+				{
+					"name": "keyword.constant.boolean",
+					"match": "\\b(true|false)\\b"
+				},
+				{
+					"name": "keyword.this",
+					"match": "\\b(this)\\b"
+				},
+				{
+					"name": "keyword.super",
+					"match": "\\b(super)\\b"
+				}
+			]
 		},
-		"statements": {
-			"patterns": [
+		"statements": 
+		{
+			"patterns": 
+			[
 				{
 					"match": "\\b(var)\\s+([A-Za-z_][A-Za-z0-9_]*)\\b",
 					"captures": {
-						"1": {
+						"1": 
+						{
 							"name": "storage.type.cellox"
 						},
-						"2": {
+						"2": 
+						{
 							"name": "support.variable.cellox"
 						}
 					}
 				},
 				{
 					"match": "\\b(fun)\\s+([A-Za-z_][A-Za-z0-9_]*)\\s*\\(([A-Za-z0-9,\\s]*)\\)",
-					"captures": {
-						"1": {
+					"captures": 
+					{
+						"1": 
+						{
 							"name":"storage.type.function.cellox"
 						},
-						"2": {
+						"2": 
+						{
 							"name":"entity.name.function.cellox"
 						},
-						"3": {
-							"patterns": [
+						"3": 
+						{
+							"patterns": 
+							[
 								{
 									"match": "\\b[A-Za-z_][A-Za-z0-9_]*\\b",
 									"name": "variable.parameter.cellox"
@@ -86,62 +100,81 @@
 				},
 				{
 					"match": "\\b(class)\\s+([A-Za-z_][A-Za-z0-9_]*)(?:\\s*(:)\\s*([A-Za-z_][A-Za-z0-9_]*))?\\b",
-					"captures": {
-						"1": {
+					"captures": 
+					{
+						"1": 
+						{
 							"name": "storage.type.class.cellox"
 						},
-						"2": {
+						"2": 
+						{
 							"name": "entity.name.type.class.cellox"
 						},
-						"3": {
+						"3": 
+						{
 							"name": "storage.modifier.cellox"
 						},
-						"4": {
+						"4": 
+						{
 							"name": "entity.name.type.class.cellox"
 						}
 					}
 				}
 			]
 		},
-		"callables": {
-			"patterns": [
+		"callables": 
+		{
+			"patterns": 
+			[
 				{
 					"match": "([A-Za-z_][A-Za-z0-9_]*)\\(",
 					"name": "support.function.cellox"
 				}
 			]
 		},
-		"strings": {
+		"strings": 
+		{
 			"name": "string.quoted.double.cellox",
 			"begin": "\"",
 			"end": "\"",
-			"patterns": [
+			"patterns": 
+			[
 				{
-					"name": "constant.character.escape.cellox",
+					"name": "constant.character.legal.escape.cellox",
+					"match": "\\\\([nrt'\"\\\\]|(x[0-9a-fA-F]{2})|(u\\{[0-9a-fA-F]+\\}))"
+				},
+				{
+					"name": "constant.character.illegal.escape.cellox",
 					"match": "\\\\."
 				}
 			]
 		},
-		"digits":{
-			"patterns": [
+		"digits":
+		{
+			"patterns": 
+			[
 				{
 					"name": "constant.numeric.cellox",
 					"match": "\\b[0-9]+(?:.[0-9]+)?\\b"
 				}
 			]
 		},
-		"ident": {
-			"patterns": [
+		"ident": 
+		{
+			"patterns": 
+			[
 				{
 					"name": "variable.other.readwrite.cellox",
 					"match": "\\b[A-Za-z_][A-Za-z0-9_]*\\b"
 				}
 			]
 		},
-		"comments": {
-			"patterns": [
+		"comments": 
+		{
+			"patterns": 
+			[
 				{
-					"name": "comment.line.double-slash.cellox",
+					"name": "comment.single-line.cellox",
 					"match": "\\/\\/.*"
 				},
 				{
