@@ -13,8 +13,9 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: build
+        env:
+          CI: "true"
         run: |
           npm install
           npm install -g vsce
-          cd vscode-cellox
-          vsce package
+          npm ci
