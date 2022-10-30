@@ -3,6 +3,10 @@
   "displayName": "vscode-cellox",
   "description": "Cellox language support for vscode",
   "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FrederikTobner/vscode-cellox"
+  },
   "engines": {
     "vscode": "^1.72.0"
   },
