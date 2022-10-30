@@ -27,6 +27,10 @@
         "language": "cellox",
         "path": "./snippets.json"
       }
-    ]
+    ],
+    "scripts": {
+      "vscode:prepublish": "npm run compile",
+      "compile": "esbuild --bundle --sourcemap=external --minify --external:vscode src/extension.ts --outdir=out --platform=node --format=cjs"
+    }
   }
 }
