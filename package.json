@@ -1,0 +1,25 @@
+{
+  "name": "vscode-cellox",
+  "displayName": "vscode-cellox",
+  "description": "Cellox language support for vscode",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.72.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "cellox",
+      "aliases": ["cellox", "cellox"],
+      "extensions": [".clx"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "cellox",
+      "scopeName": "source.cellox",
+      "path": "./syntaxes/cellox.tmLanguage.json"
+    }]
+  }
+}
