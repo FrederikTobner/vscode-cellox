@@ -1,8 +1,7 @@
 {
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"name": "cellox",
-	"patterns": 
-	[
+	"patterns": [
 		{
 			"include": "#keywords"
 		},
@@ -22,15 +21,15 @@
 			"include": "#ident"
 		},
 		{
+			"include": "#operators"
+		},
+		{
 			"include": "#comments"
 		}
 	],
-	"repository": 
-	{
-		"keywords": 
-		{
-			"patterns": 
-			[
+	"repository": {
+		"keywords": {
+			"patterns": [
 				{
 					"name": "keyword.control.cellox",
 					"match": "\\b(if|else|while|for|return|and|or)\\b"
@@ -57,39 +56,30 @@
 				}
 			]
 		},
-		"statements": 
-		{
-			"patterns": 
-			[
+		"statements": {
+			"patterns": [
 				{
 					"match": "\\b(var)\\s+([A-Za-z_][A-Za-z0-9_]*)\\b",
 					"captures": {
-						"1": 
-						{
+						"1": {
 							"name": "storage.type.cellox"
 						},
-						"2": 
-						{
-							"name": "support.variable.cellox"
+						"2": {
+							"name": "variable.other.cellox"
 						}
 					}
 				},
 				{
 					"match": "\\b(fun)\\s+([A-Za-z_][A-Za-z0-9_]*)\\s*\\(([A-Za-z0-9,\\s]*)\\)",
-					"captures": 
-					{
-						"1": 
-						{
-							"name":"storage.type.function.cellox"
+					"captures": {
+						"1": {
+							"name": "storage.type.function.cellox"
 						},
-						"2": 
-						{
-							"name":"entity.name.function.cellox"
+						"2": {
+							"name": "entity.name.function.cellox"
 						},
-						"3": 
-						{
-							"patterns": 
-							[
+						"3": {
+							"patterns": [
 								{
 									"match": "\\b[A-Za-z_][A-Za-z0-9_]*\\b",
 									"name": "variable.parameter.cellox"
@@ -100,45 +90,68 @@
 				},
 				{
 					"match": "\\b(class)\\s+([A-Za-z_][A-Za-z0-9_]*)(?:\\s*(:)\\s*([A-Za-z_][A-Za-z0-9_]*))?\\b",
-					"captures": 
-					{
-						"1": 
-						{
+					"captures": {
+						"1": {
 							"name": "storage.type.class.cellox"
 						},
-						"2": 
-						{
+						"2": {
 							"name": "entity.name.type.class.cellox"
 						},
-						"3": 
-						{
+						"3": {
 							"name": "storage.modifier.cellox"
 						},
-						"4": 
-						{
+						"4": {
 							"name": "entity.name.type.class.cellox"
 						}
 					}
 				}
 			]
 		},
-		"callables": 
-		{
-			"patterns": 
-			[
+		"operators": {
+			"patterns": [
 				{
-					"match": "([A-Za-z_][A-Za-z0-9_]*)\\(",
-					"name": "support.function.cellox"
+					"match": "(=|\\+=|\\-=|\\*=|/=|%=|\\*\\*=)",
+					"name": "keyword.operator.assignment.cellox"
+				},
+				{
+                    "match": "(==|!=|<=?|>=?)",
+                    "name": "keyword.operator.comparison.cellox"
+                },
+				{
+					"match": "(\\+|\\-|\\*|/|%|\\*\\*)",
+					"name": "keyword.operator.arithmetic.cellox"
+				},
+				{
+					"match": "(&&|\\|\\||!)",
+					"name": "keyword.operator.logical.cellox"
 				}
 			]
 		},
-		"strings": 
-		{
+		"callables": {
+			"patterns": [
+				{
+					"match": "([A-Za-z_][A-Za-z0-9_]*)\\(([A-Za-z0-9,\\s]*)\\)",
+					"captures": {
+						"1": {
+							"name": "support.function.cellox"
+						},
+						"2": {
+							"patterns": [
+								{
+									"match": "\\b[A-Za-z_][A-Za-z0-9_]*\\b",
+									"name": "variable.parameter.cellox"
+								}
+							]
+						}
+					} 
+				}
+			]
+		},
+		"strings": {
 			"name": "string.quoted.double.cellox",
 			"begin": "\"",
 			"end": "\"",
-			"patterns": 
-			[
+			"patterns": [
 				{
 					"name": "constant.character.legal.escape.cellox",
 					"match": "\\\\([nrt'\"\\\\]|(x[0-9a-fA-F]{2})|(u\\{[0-9a-fA-F]+\\}))"
@@ -149,30 +162,24 @@
 				}
 			]
 		},
-		"digits":
-		{
-			"patterns": 
-			[
+		"digits": {
+			"patterns": [
 				{
 					"name": "constant.numeric.cellox",
 					"match": "\\b[0-9]+(?:.[0-9]+)?\\b"
 				}
 			]
 		},
-		"ident": 
-		{
-			"patterns": 
-			[
+		"ident": {
+			"patterns": [
 				{
 					"name": "variable.other.readwrite.cellox",
 					"match": "\\b[A-Za-z_][A-Za-z0-9_]*\\b"
 				}
 			]
 		},
-		"comments": 
-		{
-			"patterns": 
-			[
+		"comments": {
+			"patterns": [
 				{
 					"name": "comment.single-line.cellox",
 					"match": "\\/\\/.*"
