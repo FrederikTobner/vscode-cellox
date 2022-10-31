@@ -3,57 +3,51 @@
   "displayName": "vscode-cellox",
   "description": "Cellox language support for vscode",
   "version": "0.0.1",
-  "repository": 
-  {
+  "repository": {
     "type": "git",
     "url": "https://github.com/FrederikTobner/vscode-cellox"
   },
-  "engines": 
-  {
+  "engines": {
     "vscode": "^1.72.0"
   },
-  "categories": 
-  [
+  "categories": [
     "Programming Languages",
     "Snippets"
   ],
-  "contributes": 
-  {
-    "languages": 
-    [
+  "contributes": {
+    "languages": [
       {
         "id": "cellox",
-        "aliases": ["cellox", "cellox"],
-        "extensions": [".clx"],
+        "aliases": [
+          "Cellox"
+        ],
+        "extensions": [
+          ".clx"
+        ],
         "configuration": "./language-configuration.json"
       }
     ],
-    "grammars": 
-    [
+    "grammars": [
       {
         "language": "cellox",
         "scopeName": "source.cellox",
         "path": "./syntaxes/cellox.tmLanguage.json"
       }
     ],
-    "snippets": 
-    [
+    "snippets": [
       {
         "language": "cellox",
         "path": "./snippets.json"
       }
     ],
-    "scripts": 
-    {
+    "scripts": {
       "vscode:prepublish": "npm run compile"
     }
   },
-  "devDependencies": 
-  {
+  "devDependencies": {
     "vscode-test": "^1.4.0"
   },
-  "dependencies": 
-  {
+  "dependencies": {
     "vsce": "^2.11.0"
   }
 }
