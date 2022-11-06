@@ -38,19 +38,6 @@
 		],
 		"description": "if snippet"
 	},
-    "elif": 
-	{
-		"prefix": "elif",
-		"body": 
-		[
-			"else if ($1)",
-			"{",
-			"\t%2",
-			"}",
-			"$3"
-		],
-		"description": "else if snippet"
-	},
     "else": 
 	{
 		"prefix": "else",
