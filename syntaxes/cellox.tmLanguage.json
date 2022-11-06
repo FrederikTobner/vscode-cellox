@@ -18,13 +18,13 @@
 			"include": "#digits"
 		},
 		{
-			"include": "#ident"
+			"include": "#identifiers"
 		},
 		{
 			"include": "#comments"
 		},
 		{
-			"include": "#operator"
+			"include": "#operators"
 		}
 	],
 	"repository": {
@@ -150,7 +150,7 @@
 				}
 			]
 		},
-		"ident": {
+		"identifiers": {
 			"patterns": [
 				{
 					"name": "variable.other.readwrite.cellox",
@@ -158,7 +158,7 @@
 				}
 			]
 		},
-		"operator": {
+		"operators": {
 			"patterns": [
 				{
 					"match": "(=|\\+=|\\-=|\\*=|/=|%=|\\*\\*=)",
