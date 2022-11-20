@@ -4,7 +4,7 @@
 		"prefix": "for",
 		"body": 
 		[
-			"for (var i = 0; i < $1; i++)",
+			"for (var i = 0; i < $1; i += 1)",
 			"{",
 			"\t$2",
 			"}",
@@ -86,6 +86,16 @@
 			"$2"
 		],
 		"description": "print output to the console"
+	},
+	"println": 
+	{
+		"prefix": "println",
+		"body": 
+		[
+			"println $1;",
+			"$2"
+		],
+		"description": "print output to the console and add a linebreak after printing the message"
 	},
 	"var": 
 	{
