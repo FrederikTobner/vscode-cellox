@@ -36,7 +36,7 @@
 				},
 				{
 					"name": "keyword.print",
-					"match": "\\b(print)\\b"
+					"match": "\\b(print|println)\\b"
 				},
 				{
 					"name": "keyword.constant.null",
