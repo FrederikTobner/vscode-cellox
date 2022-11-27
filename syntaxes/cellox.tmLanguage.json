@@ -106,28 +106,8 @@
 		"callables": {
 			"patterns": [
 				{
-					"match": "([A-Za-z_][A-Za-z0-9_]*)\\(([A-Za-z0-9,\\s]*)|(\".*\",\\s)*\\)",
-					"captures": {
-						"1": {
-							"name": "support.function.cellox"
-						},
-						"2": {
-							"patterns": [
-								{
-									"match": "\\b[A-Za-z_][A-Za-z0-9_]*\\b",
-									"name": "variable.parameter.cellox"
-								},
-								{
-									"match": "\\b(\".*\",\\s)*\\b",
-									"name": "string.quoted.double.cellox"
-								},
-								{
-									"match": "\\b[0-9]+(?:.[0-9]+)?\\b",
-									"name": "constant.numeric.cellox"
-								}
-							]
-						}
-					}
+					"match": "([A-Za-z_][A-Za-z0-9_]*)\\(",
+					"name": "support.function.cellox"
 				}
 			]
 		},
