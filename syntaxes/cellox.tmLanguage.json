@@ -108,7 +108,6 @@
 				{
 					"match": "([A-Za-z_][A-Za-z0-9_]*)\\(",
 					"name": "support.function.cellox"
-					
 				}
 			]
 		},
