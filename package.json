@@ -2,7 +2,8 @@
   "name": "vscode-cellox",
   "displayName": "vscode-cellox",
   "description": "Cellox language support for vscode",
-  "version": "0.0.1",
+  "version": "0.1.0",
+  "publisher": "Frederik-Tobner",
   "repository": {
     "type": "git",
     "url": "https://github.com/FrederikTobner/vscode-cellox"
@@ -39,15 +40,10 @@
         "language": "cellox",
         "path": "./snippets.json"
       }
-    ],
-    "scripts": {
-      "vscode:prepublish": "npm run compile"
-    }
+    ]
   },
-  "devDependencies": {
-    "vscode-test": "^1.4.0"
-  },
-  "dependencies": {
-    "vsce": "^2.11.0"
+  "scripts": {
+    "package": "npx --yes @vscode/vsce package --out vscode-cellox.vsix",
+    "install-local": "npm run package && code --install-extension vscode-cellox.vsix --force"
   }
 }

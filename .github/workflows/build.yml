@@ -11,12 +11,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
       - name: Build package
-        env:
-          CI: "true"
-        run: |
-          npm install
-          npm install -g vsce
-          npm ci
-          vsce package
+        run: npx --yes @vscode/vsce package
+
+      - name: Upload package
+        uses: actions/upload-artifact@v4
+        with:
+          name: vscode-cellox
+          path: "*.vsix"
