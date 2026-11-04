@@ -10,6 +10,7 @@
   - hexadecimal and binary number literals, nested block comments and all supported escape sequences
   - fixed the highlighting of `==`, `!=`, `<=` and `>=`
 - New snippets for do-while loops, inheritance, initializers, `printf`, arrays, slices, modules and error handling
+- Added an extension icon and a language icon for `.clx` files
 - Auto closing pair for block comments
 - Cross-platform local installation with `npm run install-local` (replaces `install.bat`)
 
