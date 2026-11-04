@@ -4,7 +4,7 @@
   "description": "Cellox language support for vscode",
   "version": "0.1.0",
   "publisher": "Frederik-Tobner",
-  "icon": "icons/extension-icon.png",
+  "icon": "icons/extension_icon.png",
   "repository": {
     "type": "git",
     "url": "https://github.com/FrederikTobner/vscode-cellox"
